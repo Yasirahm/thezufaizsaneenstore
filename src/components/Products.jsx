@@ -31,9 +31,6 @@ const products = [
 ];
 
 const Products = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
   return (
     <section id="products" className="p-6 sm:p-10">
       <motion.h2
@@ -44,37 +41,41 @@ const Products = () => {
       >
         Our Products
       </motion.h2>
-      <div ref={ref} className="flex justify-center flex-wrap gap-4 sm:gap-6">
-        {products.map((product, index) => (
-          <motion.div
-            key={product.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: index * 0.2, duration: 0.5 }}
-          >
-            <Link to={`/product/${product.id}`} className="no-underline text-white">
-              <div className="relative bg-purple-600 p-4 hover:scale-105 duration-500 sm:p-5 rounded-lg shadow-lg w-44 sm:w-52 text-center flex flex-col justify-between min-h-[320px]">
-                <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
-                  20% OFF
-                </span>
-                <img src={product.img} alt={product.name} className="w-full rounded-lg mb-2 h-32 object-cover" />
-                <p className="font-bold text-sm sm:text-base">{product.name}</p>
-                <p className="text-xs sm:text-sm text-gray-200 mt-1 flex-grow">{product.desc}</p>
-                <p className="text-yellow-300 font-semibold mt-1">
-                  <span className="text-gray-300 line-through mr-2">{product.originalPrice}</span>
-                  {product.price}
-                </p>
-                <div className="mt-3">
-                  <button className="bg-red-600 text-white py-1 px-4 w-full rounded-lg hover:bg-red-700">
-                    View Details
-                  </button>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
+        {products.map((product, index) => {
+          const ref = useRef(null);
+          const isInView = useInView(ref, { triggerOnce: false, threshold: 0.2 });
+          return (
+            <motion.div
+              key={product.id}
+              ref={ref}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+            >
+              <Link to={`/product/${product.id}`} className="no-underline text-white">
+                <div className="relative bg-purple-600 p-4 hover:scale-105 duration-500 sm:p-5 rounded-lg shadow-lg w-full text-center flex flex-col justify-between min-h-[320px]">
+                  <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
+                    20% OFF
+                  </span>
+                  <img src={product.img} alt={product.name} className="w-full rounded-lg mb-2 h-32 object-cover" />
+                  <p className="font-bold text-sm sm:text-base">{product.name}</p>
+                  <p className="text-xs sm:text-sm text-gray-200 mt-1 flex-grow">{product.desc}</p>
+                  <p className="text-yellow-300 font-semibold mt-1">
+                    <span className="text-gray-300 line-through mr-2">{product.originalPrice}</span>
+                    {product.price}
+                  </p>
+                  <div className="mt-3">
+                    <button className="bg-red-600 text-white py-1 px-4 w-full rounded-lg hover:bg-red-700">
+                      View Details
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          </motion.div>
-        ))}
+              </Link>
+            </motion.div>
+          );
+        })}
       </div>
-    
     </section>
   );
 };

@@ -42,9 +42,7 @@ const Footer = () => {
               <p className="mt-4 text-xs sm:text-sm italic">
                 🌙 "Indeed, Allah is the Bestower of mercy." - Surah Al-Baqarah 2:261
               </p>
-              <p className="mt-1 text-xs sm:text-sm italic">
-                📖 "And He it is Who created the heavens and the earth in six days." - Surah Al-A'raf 7:54
-              </p>
+             
             </div>
 
             <div className="flex justify-center space-x-6 mt-10">

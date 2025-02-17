@@ -52,16 +52,16 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col items-center justify-center px-6">
       <motion.h2
         className="text-3xl bg-gradient-to-r from-purple-800 to-gray-800 font-bold text-black text-center mb-6"
-        initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
       >
         Get in Touch
       </motion.h2>
       <motion.p
         className="text-gray-200 text-center mb-6"
-        initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
         transition={{ duration: 0.8 }}
       >
         Have questions or custom requests? Fill out the form below, and we’ll get back to you soon.
@@ -70,12 +70,17 @@ const Contact = () => {
       <motion.form
         onSubmit={handleSubmit}
         className="w-full max-w-lg space-y-4"
-        initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
         transition={{ duration: 1 }}
       >
-        {Object.keys(formEntries).map((field) => (
-          <div key={field}>
+        {Object.keys(formEntries).map((field, index) => (
+          <motion.div 
+            key={field}
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
             <label className="block text-gray-200 font-semibold">
               {field.charAt(0).toUpperCase() + field.slice(1)}
             </label>
@@ -102,7 +107,7 @@ const Contact = () => {
                 <option value="1">⭐️ (Very Bad)</option>
               </select>
             )}
-          </div>
+          </motion.div>
         ))}
 
         <motion.button
@@ -117,8 +122,8 @@ const Contact = () => {
 
       <motion.div
         className="mt-8 text-center text-gray-100"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 1 }}
       >
         <p>📍 <strong>Address:</strong> LalBazaar Srinagar</p>
@@ -130,8 +135,8 @@ const Contact = () => {
       <motion.section
         id="contact"
         className="p-6 text-center"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 1 }}
       >
         <h2 className="text-xl font-bold">Order Now</h2>

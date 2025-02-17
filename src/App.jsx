@@ -19,7 +19,7 @@ const App = () => {
           path="/"
           element={
             <>
-            <div className="bg-gradient-to-r from-blue-900 via-purple-700 via-purple-900 via-gray-500 to-gray-700">
+            <div className="bg-gradient-to-r from-purple-800 via-orange-900  to-gray-700 animated-gradient">
               <Header />
               <Products />
               <About />

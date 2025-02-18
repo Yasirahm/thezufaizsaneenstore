@@ -15,7 +15,7 @@ const DownloadAppSection = () => {
         <p>🔹 <span className="font-semibold">Easy Order Tracking & Updates</span></p>
       </div>
 
-      <a href="/thezufaizsaneenstore.apk" download
+      <a href="/thezufaizsaneenstore1.apk" download
         target="_blank" 
         rel="noopener noreferrer"
         className="mt-5 inline-block bg-red-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-red-700 transition duration-300"

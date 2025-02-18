@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaShoppingCart, FaStar, FaHeadset } from "react-icons/fa";
 import Man from "../assets/Logo.jpg";
+import DownloadAppSection from "./DownloadAppSection";
 
 const About = () => {
   return (
@@ -76,6 +77,7 @@ const About = () => {
           </motion.div>
         </motion.div>
       </div>
+      <DownloadAppSection/>
     </>
   );
 };

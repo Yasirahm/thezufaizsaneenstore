@@ -20,7 +20,7 @@ const products = [
   { id: 2, img: Frame, name: "Customized Frames", desc: "Elegant custom frames to cherish your memories.", price: "₹350", originalPrice: "₹450" },
   { id: 3, img: Lock, name: "Customized Keychains", desc: "Stylish and durable personalized keychains.", price: "₹250", originalPrice: "₹300" },
   { id: 4, img: Cup, name: "Premium Pens", desc: "Premium engraved pens for a personal touch.", price: "₹250", originalPrice: "₹300" },
-  { id: 5, img: Aes, name: "Customized Digital Frame", desc: "Premium aesthetic photo frame for a personal touch.", price: "₹350", originalPrice: "₹450" },
+  { id: 5, img: Aes, name: "Customized Digital Frame", desc: "Premium aesthetic photo frame.", price: "₹350", originalPrice: "₹450" },
   { id: 6, img: Cpen, name: "Customized Pens", desc: "Customized engraved pens for a personal touch.", price: "₹250", originalPrice: "₹350" },
   { id: 7, img: Namep, name: "Customized Name Badge", desc: "Professionally engraved name badge.", price: "₹120", originalPrice: "₹299" },
   { id: 8, img: Photo, name: "Personalized Photo Collage", desc: "Customized photo collage.", price: "₹350", originalPrice: "₹450" },
@@ -55,7 +55,7 @@ const Products = () => {
               transition={{ delay: index * 0.15, duration: 0.5 }}
             >
               <Link to={`/product/${product.id}`} className="no-underline text-white">
-                <div className="relative bg-purple-600 p-4 hover:scale-105 duration-500 sm:p-5 rounded-lg shadow-lg w-full text-center flex flex-col justify-between h-[350px] lg:h-[420px]">
+                <div className="relative bg-purple-600 p-4 hover:scale-105 duration-500 sm:p-5 rounded-lg shadow-lg w-full text-center flex flex-col justify-between h-[360px] lg:h-[420px]">
                   <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
                     20% OFF
                   </span>

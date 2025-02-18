@@ -59,7 +59,7 @@ const Contact = () => {
         Get in Touch
       </motion.h2>
       <motion.p
-        className="text-gray-200 text-center mb-6"
+        className="text-gray-200 text-center text-sm mb-6"
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 0.8 }}

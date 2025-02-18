@@ -16,11 +16,11 @@ import Bottle from "../assets/Bottle.jpg";
 import Calli from "../assets/Calli.png";
 
 const products = [
-  { id: 1, img: Pen, name: "Customized Mugs", desc: "High-quality, personalized mugs perfect for gifting.", price: "₹250", originalPrice: "₹350" },
+  { id: 1, img: Cup, name: "Customized Mugs", desc: "High-quality, personalized mugs perfect for gifting.", price: "₹250", originalPrice: "₹350" },
   { id: 2, img: Frame, name: "Customized Frames", desc: "Elegant custom frames to cherish your memories.", price: "₹350", originalPrice: "₹450" },
   { id: 3, img: Lock, name: "Customized Keychains", desc: "Stylish and durable personalized keychains.", price: "₹250", originalPrice: "₹300" },
-  { id: 4, img: Beautiful, name: "Premium Pens", desc: "Premium engraved pens for a personal touch.", price: "₹250", originalPrice: "₹300" },
-  { id: 5, img: Aes, name: "Customized digital frame", desc: "Premium aesthetic photo frame for a personal touch.", price: "₹350", originalPrice: "₹450" },
+  { id: 4, img: Pen, name: "Premium Pens", desc: "Premium engraved pens for a personal touch.", price: "₹250", originalPrice: "₹300" },
+  { id: 5, img: Aes, name: "Customized Digital Frame", desc: "Premium aesthetic photo frame for a personal touch.", price: "₹350", originalPrice: "₹450" },
   { id: 6, img: Cpen, name: "Customized Pens", desc: "Customized engraved pens for a personal touch.", price: "₹250", originalPrice: "₹350" },
   { id: 7, img: Namep, name: "Customized Name Badge", desc: "Professionally engraved name badge.", price: "₹120", originalPrice: "₹299" },
   { id: 8, img: Photo, name: "Personalized Photo Collage", desc: "Customized photo collage.", price: "₹350", originalPrice: "₹450" },
@@ -44,22 +44,23 @@ const Products = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
         {products.map((product, index) => {
           const ref = useRef(null);
-          const isInView = useInView(ref, { triggerOnce: false, threshold: 0.2 });
+          const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
+
           return (
             <motion.div
               key={product.id}
               ref={ref}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ delay: index * 0.15, duration: 0.5 }}
             >
               <Link to={`/product/${product.id}`} className="no-underline text-white">
-                <div className="relative bg-purple-600 p-4 hover:scale-105 duration-500 sm:p-5 rounded-lg shadow-lg w-full text-center flex flex-col justify-between min-h-[320px]">
+                <div className="relative bg-purple-600 p-4 hover:scale-105 duration-500 sm:p-5 rounded-lg shadow-lg w-full text-center flex flex-col justify-between h-[350px] lg:h-[420px]">
                   <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
                     20% OFF
                   </span>
-                  <img src={product.img} alt={product.name} className="w-full rounded-lg mb-2 h-32 object-cover" />
-                  <p className="font-bold text-sm sm:text-base">{product.name}</p>
+                  <img src={product.img} alt={product.name} className="w-full rounded-lg mb-2 h-[230px] object-cover" />
+                  <p className="font-bold text-sm sm:text-base flex-grow">{product.name}</p>
                   <p className="text-xs sm:text-sm text-gray-200 mt-1 flex-grow">{product.desc}</p>
                   <p className="text-yellow-300 font-semibold mt-1">
                     <span className="text-gray-300 line-through mr-2">{product.originalPrice}</span>

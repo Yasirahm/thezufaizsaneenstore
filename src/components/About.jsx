@@ -35,18 +35,18 @@ const About = () => {
           <div className="flex flex-col gap-3 text-lg text-gray-100">
             <div className="flex items-center justify-center lg:justify-start gap-3">
               <FaShoppingCart className="text-blue-500 text-xl" />
-              <span className="font-semibold">High-Quality Products</span>
+              <span className="font-semibold lg:text-lg text-sm">High-Quality Products</span>
             </div>
             <div className="flex items-center justify-center lg:justify-start gap-3">
               <FaStar className="text-yellow-500 text-xl" />
-              <span className="font-semibold">Affordable Prices</span>
+              <span className="font-semibold lg:text-lg text-sm">Affordable Prices</span>
             </div>
             <div className="flex items-center justify-center lg:justify-start gap-3">
               <FaHeadset className="text-green-500 text-xl" />
-              <span className="font-semibold">24/7 Customer Support</span>
+              <span className="font-semibold lg:text-lg text-sm">24/7 Customer Support</span>
             </div>
           </div>
-          <p className="text-gray-200 text-sm md:text-lg">
+          <p className="text-gray-200 text-xs md:text-lg">
             We are a team of dedicated professionals committed to quality, reliability, and customer satisfaction. Our mission is to provide authentic and trendy products that cater to your needs and enhance your lifestyle.
           </p>
         </motion.div>

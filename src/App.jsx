@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Order from "./components/Order";
 import ProductPage from "./components/ProductPage"; // ✅ Import ProductDetails
+import CursorFollower from "./components/CursorFollower";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           element={
             <>
             <div className="bg-gradient-to-r from-purple-800 via-orange-900  to-gray-700 animated-gradient">
+              <CursorFollower/>
               <Header />
               <Products />
               <About />

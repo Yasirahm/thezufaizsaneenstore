@@ -139,7 +139,7 @@ const Contact = () => {
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-xl font-bold">Order Now</h2>
+        <h2 className="text-xl font-bold text-white">Order Now</h2>
         <p className="text-sm font-bold">Order through our Instagram page:</p>
         <a
           href="https://www.instagram.com/the_zufaiz_saneen_store"
